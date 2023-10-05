@@ -1,11 +1,12 @@
+"use client"
 import React, { useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Note from "./Note";
-import CreateArea from "./CreateArea";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Note from "@/components/Note";
+import CreateArea from "@/components/CreateArea";
 import { v4 as uuidv4 } from "uuid";
 
-function App() {
+export default function Home() {
   const [notes, setNotes] = useState([]);
 
   function addNote(newNote) {
@@ -13,7 +14,7 @@ function App() {
 
     setNotes((prev) => [
       ...prev,
-      { id: newId, title: newNote.title, content: newNote.content }
+      { id: newId, title: newNote.title, content: newNote.content },
     ]);
   }
 
@@ -38,5 +39,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
